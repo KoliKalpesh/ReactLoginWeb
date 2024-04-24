@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const AccountSettingsPage = () => {
-  // Use state to manage authentication status
+  
   const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('currentUser')));
 
   const handleLogout = () => {
-    // Implement logout logic here, such as clearing localStorage or redirecting to the logout page
+    
     localStorage.removeItem('currentUser');
-    // Update state to reflect the logout
+    
     setCurrentUser(null);
   };
   

@@ -10,7 +10,7 @@ const RegisterPage = () => {
   const history = useNavigate();
 
   const handleRegister = () => {
-    // Simulate registration logic by storing user data in localStorage
+   
     const userData = {
       name,
       email,
@@ -19,22 +19,22 @@ const RegisterPage = () => {
       isAgency
     };
 
-    // Check if user data already exists in localStorage
+    
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
 
-    // Check if the email is already registered
+   
     if (existingUsers.some(user => user.email === email)) {
       alert('Email is already registered.');
       return;
     }
 
-    // Add the new user data to existing users
+    
     const updatedUsers = [...existingUsers, userData];
 
-    // Store the updated users data in localStorage
+    
     localStorage.setItem('users', JSON.stringify(updatedUsers));
 
-    // Navigate to the login page after successful registration
+    
     history('/login');
   };
 

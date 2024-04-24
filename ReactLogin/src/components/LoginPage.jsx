@@ -7,18 +7,17 @@ const LoginPage = () => {
   const history = useNavigate();
 
   const handleLogin = () => {
-    // In a real application, you would typically send a request to the server to authenticate the user
-    // For this example, let's simulate a successful login with hardcoded credentials
+   
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(u => u.email === email && u.password === password);
 
     if (user) {
-      // Simulate successful login by storing user data in localStorage
+      
       localStorage.setItem('currentUser', JSON.stringify(user));
-      // Redirect to account settings page after successful login
-      history.push('/account-settings'); // Use push method instead of directly invoking history
+      
+      history.push('/account-settings'); 
     } else {
-      // Show error message for invalid credentials
+      
       alert('Invalid email or password');
     }
     
